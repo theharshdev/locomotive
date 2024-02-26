@@ -73,11 +73,7 @@ const scroll = new LocomotiveScroll({
   smooth: true,
   multiplier: 0.7,
   lerp: 0.05,
-  smoothMobile: {
-    smooth: false,
-    multiplier: 1,
-    lerp: 1,
-  },
+  smoothMobile:false,
 });
 
 const cursor = document.getElementById("cursor");
