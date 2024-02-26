@@ -12,8 +12,8 @@ function locoScroll() {
       el: document.querySelector("[data-scroll-container]"),
       smooth: true,
       smoothMobile: true,
-      lerp: 1,
-      // multiplier: 1,
+      // lerp: 1,
+      multiplier: 1,
     });
   }
 }
