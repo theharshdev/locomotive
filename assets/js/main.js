@@ -71,9 +71,9 @@ window.addEventListener("mousemove", (event) => {
 const scroll = new LocomotiveScroll({
   el: document.querySelector("[data-scroll-container]"),
   smooth: true,
-  lerp: 0.07,
-  multiplier: 0.6,
-  smoothMobile: {
+  lerp: 0.05,
+  multiplier: 0.5,
+  smartphone: {
     smooth: true,
     touchMultiplier: 2,
     lerp: 1,
