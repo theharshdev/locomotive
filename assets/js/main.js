@@ -72,8 +72,8 @@ const scroll = new LocomotiveScroll({
   el: document.querySelector("[data-scroll-container]"),
   smooth: true,
   smoothMobile: true,
-  multiplier: 0.6,
-  lerp: 0.05,
+  multiplier: 0.8,
+  lerp: 0.1,
 });
 
 const cursor = document.getElementById("cursor");
