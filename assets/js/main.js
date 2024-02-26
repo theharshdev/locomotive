@@ -74,7 +74,7 @@ const scroll = new LocomotiveScroll({
   multiplier: 0.7,
   lerp: 0.05,
   smoothMobile: {
-    smooth: true,
+    smooth: false,
     multiplier: 1,
     lerp: 1,
   },
