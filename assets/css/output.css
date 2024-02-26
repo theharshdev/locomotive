@@ -1009,6 +1009,14 @@ video {
   --tw-gradient-to: transparent var(--tw-gradient-to-position);
 }
 
+.stroke-white {
+  stroke: #fff;
+}
+
+.stroke-1 {
+  stroke-width: 1;
+}
+
 .p-10 {
   padding: 2.5rem;
 }
@@ -1042,8 +1050,9 @@ video {
   padding-bottom: 13rem;
 }
 
-.pb-44 {
-  padding-bottom: 11rem;
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .pt-20 {
@@ -1089,10 +1098,6 @@ video {
 
 .text-\[10vw\] {
   font-size: 10vw;
-}
-
-.text-\[12vw\] {
-  font-size: 12vw;
 }
 
 .text-\[14vw\] {
@@ -1174,6 +1179,38 @@ video {
   line-height: 1;
 }
 
+.leading-3 {
+  line-height: .75rem;
+}
+
+.leading-\[\] {
+  line-height: ;
+}
+
+.leading-\[1\] {
+  line-height: 1;
+}
+
+.leading-\[16\] {
+  line-height: 16;
+}
+
+.leading-\[16v\] {
+  line-height: 16v;
+}
+
+.leading-\[16vw\] {
+  line-height: 16vw;
+}
+
+.leading-\[1vw\] {
+  line-height: 1vw;
+}
+
+.leading-\[17vw\] {
+  line-height: 17vw;
+}
+
 .tracking-\[1rem\] {
   letter-spacing: 1rem;
 }
@@ -1215,16 +1252,21 @@ video {
   color: ;
 }
 
-.text-\[1\] {
-  color: 1;
+.text-\[2\] {
+  color: 2;
 }
 
-.text-\[10\] {
-  color: 10;
+.text-\[20\] {
+  color: 20;
 }
 
-.text-\[10v\] {
-  color: 10v;
+.text-\[20v\] {
+  color: 20v;
+}
+
+.text-zinc-300 {
+  --tw-text-opacity: 1;
+  color: rgb(212 212 216 / var(--tw-text-opacity));
 }
 
 .opacity-10 {
@@ -1387,6 +1429,14 @@ video {
     font-size: 0.875rem;
     line-height: 1.25rem;
   }
+
+  .sm\:text-\[14vw\] {
+    font-size: 14vw;
+  }
+
+  .sm\:leading-\[11\.5vw\] {
+    line-height: 11.5vw;
+  }
 }
 
 @media (min-width: 768px) {
@@ -1503,6 +1553,11 @@ video {
     line-height: 1.75rem;
   }
 
+  .md\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
   .md\:tracking-\[2rem\] {
     letter-spacing: 2rem;
   }
@@ -1535,6 +1590,10 @@ video {
 
   .lg\:mt-8 {
     margin-top: 2rem;
+  }
+
+  .lg\:-mt-10 {
+    margin-top: -2.5rem;
   }
 
   .lg\:block {
@@ -1640,6 +1699,11 @@ video {
 
   .lg\:text-\[300px\] {
     font-size: 300px;
+  }
+
+  .lg\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
   }
 
   .lg\:tracking-\[3rem\] {
