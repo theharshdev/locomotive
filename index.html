@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- 
+  npx tailwindcss -i ./src/input.css -o ./dist/assets/css/output.css --watch 
+  -->
+
+  <head>
+    <!-- Required Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <!-- Google Font CDN Links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Six+Caps&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons CSS File Link -->
+    <link href="assets/css/bootstrap-icon.css" rel="stylesheet" />
+    <!-- Tailwind CSS File Link -->
+    <link href="assets/css/output.css" rel="stylesheet" />
+    <!-- Custom CSS File Link -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <title>Practice</title>
+  </head>
+
+  <body id="body" class="bg-black">
+    <!-- Cursor -->
+    <div class="lg:block hidden">
+      <div
+        id="cursor"
+        class="w-8 h-8 transition-none fixed z-[999999] hidden text-white text-4xl mix-blend-difference pointer-events-none -translate-x-1/2 -translate-y-1/2"
+      >
+        <div
+          class="w-full h-0.5 bg-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+        ></div>
+        <div
+          class="h-full w-0.5 bg-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+        ></div>
+      </div>
+    </div>
+    <!-- Preloader -->
+    <div
+      class="flex whitespace-nowrap flex-nowrap fixed top-0 left-0 w-full z-[9999999]"
+    >
+      <div
+        class="w-full bg-orange-500 loaderBox h-screen border-e border-black"
+        style="transition: 0.5s"
+      ></div>
+      <div
+        class="w-full bg-orange-500 loaderBox h-screen border-e border-black"
+        style="transition: 0.5s"
+      ></div>
+      <div
+        class="w-full bg-orange-500 loaderBox h-screen border-e border-black"
+        style="transition: 0.5s"
+      ></div>
+      <div
+        class="w-full bg-orange-500 loaderBox h-screen border-e border-black md:block hidden"
+        style="transition: 0.5s"
+      ></div>
+      <div
+        class="w-full bg-orange-500 loaderBox h-screen border-e border-black lg:block hidden"
+        style="transition: 0.5s"
+      ></div>
+    </div>
+    <div data-scroll-container class="relative mainBody">
+      <!-- lines -->
+      <div
+        data-scroll
+        data-scroll-sticky
+        data-scroll-target="#body"
+        class="fixed top-0 left-0 w-full h-screen overflow-hidden flex justify-between lg:px-20 md:px-14 sm:px-10 px-5 -z-20"
+      >
+        <div class="w-px bg-white/20 h-screen"></div>
+        <div class="w-px bg-white/20 h-screen"></div>
+        <div class="w-px bg-white/20 h-screen"></div>
+        <div class="w-px bg-white/20 h-screen"></div>
+      </div>
+      <!-- Ring circle image at the top -->
+      <img
+        src="assets/images/ring2.png"
+        alt="..."
+        class="absolute lg:top-0 top-32 left-0 lg:w-1/2 md:w-2/3 sm:w-3/4 w-full z-10 animate-spin opacity-10"
+        style="animation-duration: 10s"
+      />
+      <!-- navbar -->
+      <nav>
+        <div class="flex items-center">
+          <div class="w-full overflow-hidden">
+            <div class="w-full overflow-hidden flex whitespace-nowrap relative">
+              <div
+                class="absolute top-0 left-0 z-0 lg:w-52 md:w-32 sm:w-20 w-8 h-full bg-gradient-to-r from-black to-transparent"
+              ></div>
+              <div
+                class="absolute top-0 right-0 z-0 lg:w-52 md:w-32 sm:w-20 w-8 h-full bg-gradient-to-l from-black to-transparent"
+              ></div>
+              <h3
+                class="lg:text-9xl md:text-8xl sm:text-7xl text-5xl text-orange-500 font-extralight relative -z-10 leading-none whitespace-nowrap animationTxt italic"
+              >
+                Lorem ipsum dolor sit amet consectetur
+              </h3>
+              <h3
+                class="lg:text-9xl md:text-8xl sm:text-7xl text-5xl text-orange-500 font-extralight relative -z-10 leading-none whitespace-nowrap animationTxt italic"
+              >
+                Lorem ipsum dolor sit amet consectetur
+              </h3>
+              <h3
+                class="lg:text-9xl md:text-8xl sm:text-7xl text-5xl text-orange-500 font-extralight relative -z-10 leading-none whitespace-nowrap animationTxt italic"
+              >
+                Lorem ipsum dolor sit amet consectetur
+              </h3>
+            </div>
+            <div
+              data-scroll
+              data-scroll-speed="-2"
+              data-scroll-direction="horizontal"
+              class="leading-none px-2 -mt-8 relative z-10"
+            >
+              <p id="xval" class="text-white text-xs font-light italic">
+                x - 0
+              </p>
+              <p id="yval" class="text-white text-xs font-light italic">
+                y - 0
+              </p>
+            </div>
+          </div>
+          <div
+            data-scroll
+            data-scroll-sticky
+            data-scroll-target="#body"
+            class="uppercase lg:text-2xl mix-blend-difference md:text-xl sm:text-lg text-sm font-extralight tracking-tighter p-2 relative z-50"
+          >
+            <a
+              href="#"
+              class="paragraph block w-full justify-between items-center text-white hover:text-orange-500 leading-none text-end whitespace-nowrap italic"
+            >
+              home
+            </a>
+            <a
+              href="#"
+              class="paragraph block w-full justify-between items-center text-white hover:text-orange-500 leading-none text-end whitespace-nowrap italic"
+            >
+              about me
+            </a>
+            <a
+              href="#"
+              class="paragraph block w-full justify-between items-center text-white hover:text-orange-500 leading-none text-end whitespace-nowrap italic"
+            >
+              portfolio
+            </a>
+            <a
+              href="#"
+              class="paragraph block w-full justify-between items-center text-white hover:text-orange-500 leading-none text-end whitespace-nowrap italic"
+            >
+              services
+            </a>
+            <a
+              href="#"
+              class="paragraph block w-full justify-between items-center text-white hover:text-orange-500 leading-none text-end whitespace-nowrap italic"
+            >
+              contact
+            </a>
+          </div>
+        </div>
+      </nav>
+      <!-- Header -->
+      <main class="mt-10 px-5">
+        <div
+          class="text-[25vw] font-extralight text-white uppercase leading-none mainFont"
+        >
+          <p
+            data-scroll
+            data-scroll-speed="-2"
+            class="mainFont text-orange-500 lg:text-4xl md:text-3xl sm:text-2xl text-xl lg:tracking-[3rem] md:tracking-[2rem] tracking-[1rem] text-center relative z-10"
+          >
+            harsh <br class="lg:hidden" />
+            kushwaha
+          </p>
+          <h1
+            data-scroll
+            data-scroll-speed="2"
+            class="italic lg:mt-8 sm:mt-16 mt-20"
+          >
+            <span
+              class="scale-x-150 mainFont origin-center block w-full text-center"
+              >Creative</span
+            >
+          </h1>
+          <h2 class="mainFont flex items-center">
+            <img
+              src="assets/images/ring.png"
+              alt="..."
+              class="me-6 lg:h-72 lg:inline hidden w-auto animate-spin brightness-200 saturate-0"
+              style="animation-duration: 10s"
+            />
+            <span class="italic scale-x-150 lg:origin-center origin-left">
+              <span
+                data-scroll
+                data-scroll-speed="5"
+                class="mainFont inline-block"
+                >Developer</span
+              >
+            </span>
+          </h2>
+        </div>
+        <h3
+          data-scroll
+          data-scroll-speed="5"
+          data-scroll-direction="horizontal"
+          class="lg:text-[300px] md:text-[250px] sm:text-[200px] text-9xl whitespace-nowrap uppercase text-orange-500 relative -z-10 text-end italic myfont font-extralight mt-20"
+        >
+          About me
+        </h3>
+        <div
+          data-scroll
+          data-scroll-speed="5"
+          data-scroll-delay="0.1"
+          class="px-5 lg:-mt-80 md:-mt-64 sm:-mt-52 -mt-40"
+        >
+          <p
+            class="text-white lg:text-6xl md:text-5xl sm:text-4xl text-2xl font-extralight tracking-tighter leading-none italic uppercase"
+            style="text-shadow: 5px 5px 10px black"
+          >
+            Lorem ipsum dolor sit amet adipisicing elit. Ex, atque voluptatum
+            recusandae quas quasi explicabo porro quam modi accusamus expedita
+            earum tempora provident. Minus, necessitatibus. Dolorem obcaecati
+            quas ut.
+          </p>
+        </div>
+      </main>
+      <!-- Portfolio Image -->
+      <div class="lg:pt-44 md:pt-36 sm:pt-32 pt-20 relative -z-[999]">
+        <div
+          class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black"
+        ></div>
+        <img src="assets/images/portfolio.png" alt=".." class="w-full" />
+      </div>
+      <!-- Work section -->
+      <div class="relative z-10 lg:-mt-80 md:-mt-72 sm:-mt-60 -mt-32">
+        <!-- animated text -->
+        <div class="w-full overflow-hidden">
+          <div
+            data-scroll
+            data-scroll-speed="4"
+            data-scroll-direction="horizontal"
+            class="flex whitespace-nowrap items-center w-full"
+          >
+            <h3
+              class="lg:text-9xl md:text-7xl sm:text-6xl text-4xl text-orange-500 font-extralight relative -z-10 leading-none whitespace-nowrap"
+            >
+              Lorem ipsum dolor sit amet consectetur
+            </h3>
+            <h3
+              class="lg:text-9xl md:text-7xl sm:text-6xl text-4xl text-orange-500 font-extralight relative -z-10 leading-none whitespace-nowrap"
+            >
+              Lorem ipsum dolor sit amet consectetur
+            </h3>
+            <h3
+              class="lg:text-9xl md:text-7xl sm:text-6xl text-4xl text-orange-500 font-extralight relative -z-10 leading-none whitespace-nowrap"
+            >
+              Lorem ipsum dolor sit amet consectetur
+            </h3>
+          </div>
+          <div
+            data-scroll
+            data-scroll-speed="-4"
+            data-scroll-direction="horizontal"
+            class="flex whitespace-nowrap items-center w-full"
+          >
+            <h3
+              class="lg:text-9xl md:text-7xl sm:text-6xl text-4xl text-orange-500 font-extralight relative -z-10 leading-none whitespace-nowrap"
+            >
+              Lorem ipsum dolor sit amet consectetur
+            </h3>
+            <h3
+              class="lg:text-9xl md:text-7xl sm:text-6xl text-4xl text-orange-500 font-extralight relative -z-10 leading-none whitespace-nowrap"
+            >
+              Lorem ipsum dolor sit amet consectetur
+            </h3>
+            <h3
+              class="lg:text-9xl md:text-7xl sm:text-6xl text-4xl text-orange-500 font-extralight relative -z-10 leading-none whitespace-nowrap"
+            >
+              Lorem ipsum dolor sit amet consectetur
+            </h3>
+          </div>
+        </div>
+        <!-- Work columns -->
+        <div
+          data-scroll
+          data-scroll-speed="3"
+          class="flex justify-center lg:flex-nowrap flex-wrap lg:-mt-0 md:-mt-10 sm:-mt-16 -mt-24"
+        >
+          <a
+            href="#"
+            class="lg:w-1/12 sm:w-2/3 w-full block lg:h-[500px] overflow-hidden p-10 lg:hover:w-full group lg:border-y lg:border-s lg:border-x-0 border-t border-x border-orange-500"
+            style="transition: 0.2s linear"
+          >
+            <h3
+              class="text-[20vw] relative -z-10 font-extrabold text-orange-500 italic myfont"
+            >
+              1
+            </h3>
+            <div
+              class="lg:h-0 overflow-hidden lg:group-hover:h-full block lg:-mt-32 md:-mt-20 sm:-mt-14 -mt-10"
+            >
+              <h3
+                class="text-white lg:text-4xl md:text-3xl sm:text-2xl text-xl uppercase font-extralight leading-none italic"
+              >
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Beatae, tenetur! Enim, tempore.
+              </h3>
+              <div class="text-end lg:mt-0 mt-20">
+                <i class="bi bi-arrow-up-right text-orange-500 text-3xl"></i>
+              </div>
+            </div>
+          </a>
+          <a
+            href="#"
+            class="lg:w-1/12 sm:w-2/3 w-full block lg:h-[500px] overflow-hidden p-10 lg:hover:w-full group lg:border-y lg:border-s lg:border-x-0 border-t border-x border-orange-500"
+            style="transition: 0.2s linear"
+          >
+            <h3
+              class="text-[20vw] relative -z-10 font-extrabold text-orange-500 italic myfont"
+            >
+              2
+            </h3>
+            <div
+              class="lg:h-0 overflow-hidden lg:group-hover:h-full block lg:-mt-32 md:-mt-20 sm:-mt-14 -mt-10"
+            >
+              <h3
+                class="text-white lg:text-4xl md:text-3xl sm:text-2xl text-xl uppercase font-extralight leading-none italic"
+              >
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Beatae, tenetur! Enim, tempore.
+              </h3>
+              <div class="text-end lg:mt-0 mt-20">
+                <i class="bi bi-arrow-up-right text-orange-500 text-3xl"></i>
+              </div>
+            </div>
+          </a>
+          <a
+            href="#"
+            class="lg:w-1/12 sm:w-2/3 w-full block lg:h-[500px] overflow-hidden p-10 lg:hover:w-full group lg:border-y lg:border-s lg:border-x-0 border-t border-x border-orange-500"
+            style="transition: 0.2s linear"
+          >
+            <h3
+              class="text-[20vw] relative -z-10 font-extrabold text-orange-500 italic myfont"
+            >
+              3
+            </h3>
+            <div
+              class="lg:h-0 overflow-hidden lg:group-hover:h-full block lg:-mt-32 md:-mt-20 sm:-mt-14 -mt-10"
+            >
+              <h3
+                class="text-white lg:text-4xl md:text-3xl sm:text-2xl text-xl uppercase font-extralight leading-none italic"
+              >
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Beatae, tenetur! Enim, tempore.
+              </h3>
+              <div class="text-end lg:mt-0 mt-20">
+                <i class="bi bi-arrow-up-right text-orange-500 text-3xl"></i>
+              </div>
+            </div>
+          </a>
+          <a
+            href="#"
+            class="lg:w-1/12 sm:w-2/3 w-full block lg:h-[500px] overflow-hidden p-10 lg:hover:w-full group lg:border-y lg:border-s lg:border-x-0 border-t border-x border-orange-500"
+            style="transition: 0.2s linear"
+          >
+            <h3
+              class="text-[20vw] relative -z-10 font-extrabold text-orange-500 italic myfont"
+            >
+              4
+            </h3>
+            <div
+              class="lg:h-0 overflow-hidden lg:group-hover:h-full block lg:-mt-32 md:-mt-20 sm:-mt-14 -mt-10"
+            >
+              <h3
+                class="text-white lg:text-4xl md:text-3xl sm:text-2xl text-xl uppercase font-extralight leading-none italic"
+              >
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Beatae, tenetur! Enim, tempore.
+              </h3>
+              <div class="text-end lg:mt-0 mt-20">
+                <i class="bi bi-arrow-up-right text-orange-500 text-3xl"></i>
+              </div>
+            </div>
+          </a>
+          <a
+            href="#"
+            class="lg:w-1/12 sm:w-2/3 w-full block lg:h-[500px] overflow-hidden p-10 lg:hover:w-full group lg:border-y lg:border-s lg:border-x-0 border-t border-x border-orange-500"
+            style="transition: 0.2s linear"
+          >
+            <h3
+              class="text-[20vw] relative -z-10 font-extrabold text-orange-500 italic myfont"
+            >
+              5
+            </h3>
+            <div
+              class="lg:h-0 overflow-hidden lg:group-hover:h-full block lg:-mt-32 md:-mt-20 sm:-mt-14 -mt-10"
+            >
+              <h3
+                class="text-white lg:text-4xl md:text-3xl sm:text-2xl text-xl uppercase font-extralight leading-none italic"
+              >
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Beatae, tenetur! Enim, tempore.
+              </h3>
+              <div class="text-end lg:mt-0 mt-20">
+                <i class="bi bi-arrow-up-right text-orange-500 text-3xl"></i>
+              </div>
+            </div>
+          </a>
+          <a
+            href="#"
+            class="lg:w-1/12 sm:w-2/3 w-full block lg:h-[500px] overflow-hidden p-10 lg:hover:w-full group border border-orange-500 backdrop-blur-sm"
+            style="transition: 0.2s linear"
+          >
+            <h3
+              class="text-[20vw] relative -z-10 font-extrabold text-orange-500 italic myfont"
+            >
+              6
+            </h3>
+            <div
+              class="lg:h-0 overflow-hidden lg:group-hover:h-full block lg:-mt-32 md:-mt-20 sm:-mt-14 -mt-10"
+            >
+              <h3
+                class="text-white lg:text-4xl md:text-3xl sm:text-2xl text-xl uppercase font-extralight leading-none italic"
+              >
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Beatae, tenetur! Enim, tempore.
+              </h3>
+              <div class="text-end lg:mt-0 mt-20">
+                <i class="bi bi-arrow-up-right text-orange-500 text-3xl"></i>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <!-- some more links -->
+      <section>
+        <div class="lg:py-44 md:py-20 sm:py-10 py-0">
+          <div class="container mx-auto px-5">
+            <h3
+              data-scroll
+              data-scroll-speed="3"
+              class="uppercase text-[18vw] font-extrabold italic text-transparent tracking-tighter leading-none myfont relative -z-10 mb-20"
+              style="-webkit-text-stroke: 2px white"
+            >
+              ratione
+            </h3>
+          </div>
+          <div class="bg-black">
+            <a
+              href="#"
+              class="flex w-full justify-between items-center relative group px-5 border-t border-orange-500 overflow-hidden text-[12vw] leading-none uppercase text-white -mt-32"
+            >
+              <div
+                class="absolute h-0 w-full bottom-0 left-0 group-hover:h-full bg-orange-500 z-0"
+                style="transition: 0.3s linear"
+              ></div>
+              <div
+                class="relative z-10 flex justify-between items-center w-full"
+              >
+                <h3
+                  data-scroll
+                  data-scroll-speed="-1.1"
+                  data-scroll-direction="horizontal"
+                  class="mainFont italic tracking-tighter"
+                >
+                  Lorem ipsum dolor
+                </h3>
+                <span class="mainFont">.1</span>
+              </div>
+            </a>
+            <a
+              href="#"
+              class="flex w-full justify-between items-center relative group px-5 border-t border-orange-500 overflow-hidden text-[12vw] leading-none uppercase text-white"
+            >
+              <div
+                class="absolute h-0 w-full bottom-0 left-0 group-hover:h-full bg-orange-500 z-0"
+                style="transition: 0.3s linear"
+              ></div>
+              <div
+                class="relative z-10 flex justify-between items-center w-full"
+              >
+                <h3
+                  data-scroll
+                  data-scroll-speed="-1.1"
+                  data-scroll-direction="horizontal"
+                  class="mainFont italic tracking-tighter"
+                >
+                  consectetur adipisicing
+                </h3>
+                <span class="mainFont">.2</span>
+              </div>
+            </a>
+            <a
+              href="#"
+              class="flex w-full justify-between items-center relative group px-5 border-t border-orange-500 overflow-hidden text-[12vw] leading-none uppercase text-white"
+            >
+              <div
+                class="absolute h-0 w-full bottom-0 left-0 group-hover:h-full bg-orange-500 z-0"
+                style="transition: 0.3s linear"
+              ></div>
+              <div
+                class="relative z-10 flex justify-between items-center w-full"
+              >
+                <h3
+                  data-scroll
+                  data-scroll-speed="-1.1"
+                  data-scroll-direction="horizontal"
+                  class="mainFont italic tracking-tighter"
+                >
+                  Unde quasi
+                </h3>
+                <span class="mainFont">.3</span>
+              </div>
+            </a>
+            <a
+              href="#"
+              class="flex w-full justify-between items-center relative group px-5 border-t border-orange-500 overflow-hidden text-[12vw] leading-none uppercase text-white"
+            >
+              <div
+                class="absolute h-0 w-full bottom-0 left-0 group-hover:h-full bg-orange-500 z-0"
+                style="transition: 0.3s linear"
+              ></div>
+              <div
+                class="relative z-10 flex justify-between items-center w-full"
+              >
+                <h3
+                  data-scroll
+                  data-scroll-speed="-1.1"
+                  data-scroll-direction="horizontal"
+                  class="mainFont italic tracking-tighter"
+                >
+                  amet consectetur
+                </h3>
+                <span class="mainFont">.4</span>
+              </div>
+            </a>
+            <a
+              href="#"
+              class="flex w-full justify-between items-center relative group px-5 border-t border-orange-500 overflow-hidden text-[12vw] leading-none uppercase text-white"
+            >
+              <div
+                class="absolute h-0 w-full bottom-0 left-0 group-hover:h-full bg-orange-500 z-0"
+                style="transition: 0.3s linear"
+              ></div>
+              <div
+                class="relative z-10 flex justify-between items-center w-full"
+              >
+                <h3
+                  data-scroll
+                  data-scroll-speed="-1.1"
+                  data-scroll-direction="horizontal"
+                  class="mainFont italic tracking-tighter"
+                >
+                  quasi nostrum
+                </h3>
+                <span class="mainFont">.5</span>
+              </div>
+            </a>
+            <a
+              href="#"
+              class="flex w-full justify-between items-center relative group px-5 border-t border-orange-500 overflow-hidden text-[12vw] leading-none uppercase text-white"
+            >
+              <div
+                class="absolute h-0 w-full bottom-0 left-0 group-hover:h-full bg-orange-500 z-0"
+                style="transition: 0.3s linear"
+              ></div>
+              <div
+                class="relative z-10 flex justify-between items-center w-full"
+              >
+                <h3
+                  data-scroll
+                  data-scroll-speed="-1.1"
+                  data-scroll-direction="horizontal"
+                  class="mainFont italic tracking-tighter"
+                >
+                  nostrum illum
+                </h3>
+                <span class="mainFont">.6</span>
+              </div>
+            </a>
+            <a
+              href="#"
+              class="flex w-full justify-between items-center relative group px-5 border-y border-orange-500 overflow-hidden text-[12vw] leading-none uppercase text-white"
+            >
+              <div
+                class="absolute h-0 w-full bottom-0 left-0 group-hover:h-full bg-orange-500 z-0"
+                style="transition: 0.3s linear"
+              ></div>
+              <div
+                class="relative z-10 flex justify-between items-center w-full"
+              >
+                <h3
+                  data-scroll
+                  data-scroll-speed="-1.1"
+                  data-scroll-direction="horizontal"
+                  class="mainFont italic tracking-tighter"
+                >
+                  dolor sit
+                </h3>
+                <span class="mainFont">.7</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+      <!--  -->
+      <section>
+        <div class="container mx-auto py-32 px-5">
+          <h3
+            class="text-white text-[15vw] font-extralight leading-none tracking-tighter"
+          >
+            Lorem ipsum
+          </h3>
+          <div class="flex flex-wrap justify-center items-center relative">
+            <div
+              data-scroll
+              data-scroll-speed="2"
+              class="absolute top-[20%] left-[20%] h-full w-[80%] border-2 border-orange-500 rounded-3xl -z-10"
+            ></div>
+            <div class="md:w-1/2 sm:w-2/3 w-full relative">
+              <img
+                data-scroll
+                data-scroll-speed="3"
+                src="assets/images/1.jpg"
+                alt="..."
+                class="w-full shadow-2xl shadow-black"
+              />
+              <div
+                data-scroll
+                data-scroll-speed="2.2"
+                class="absolute w-full h-full bg-white top-5 left-5 -z-10 shadow-2xl shadow-black"
+              ></div>
+            </div>
+            <h3
+              class="text-white lg:text-4xl md:text-3xl sm:text-2xl text-xl font-extralight leading-none tracking-tighter mix-blend-difference md:w-1/2 sm:2/3 w-full myfont italic md:-ms-20 -ms-0 relative z-10"
+            >
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Exercitationem tempora dicta voluptatem!
+            </h3>
+          </div>
+          <div
+            class="flex flex-wrap justify-center items-center relative lg:mt-10 sm:mt-8 mt-20"
+          >
+            <div
+              data-scroll
+              data-scroll-speed="2"
+              class="absolute top-[20%] md:right-[20%] md:left-auto left-[20%] right-auto h-full w-[80%] border-2 border-orange-500 rounded-3xl -z-10"
+            ></div>
+            <div class="md:w-1/2 sm:w-2/3 w-full relative md:order-2 order-1">
+              <img
+                data-scroll
+                data-scroll-speed="3"
+                src="assets/images/2.jpg"
+                alt="..."
+                class="w-full shadow-2xl shadow-black"
+              />
+              <div
+                data-scroll
+                data-scroll-speed="2.2"
+                class="absolute w-full h-full bg-white top-5 left-5 -z-10 shadow-2xl shadow-black"
+              ></div>
+            </div>
+            <h3
+              class="text-white lg:text-4xl md:text-3xl sm:text-2xl text-xl font-extralight leading-none tracking-tighter mix-blend-difference md:w-1/2 sm:2/3 w-full myfont italic md:-me-20 -me-0 md:text-end text-start relative z-10 md:order-1 order-2"
+            >
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Exercitationem tempora dicta voluptatem!
+            </h3>
+          </div>
+          <div
+            class="flex flex-wrap justify-center items-center relative lg:mt-10 sm:mt-8 mt-20"
+          >
+            <div
+              data-scroll
+              data-scroll-speed="2"
+              class="absolute top-[20%] left-[20%] h-full w-[80%] border-2 border-orange-500 rounded-3xl -z-10"
+            ></div>
+            <div class="md:w-1/2 sm:w-2/3 w-full relative">
+              <img
+                data-scroll
+                data-scroll-speed="3"
+                src="assets/images/3.jpg"
+                alt="..."
+                class="w-full shadow-2xl shadow-black"
+              />
+              <div
+                data-scroll
+                data-scroll-speed="2.2"
+                class="absolute w-full h-full bg-white top-5 left-5 -z-10 shadow-2xl shadow-black"
+              ></div>
+            </div>
+            <h3
+              class="text-white lg:text-4xl md:text-3xl sm:text-2xl text-xl font-extralight leading-none tracking-tighter mix-blend-difference md:w-1/2 sm:2/3 w-full myfont italic md:-ms-20 -ms-0 relative z-10"
+            >
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Exercitationem tempora dicta voluptatem!
+            </h3>
+          </div>
+          <div
+            class="flex flex-wrap justify-center items-center relative lg:mt-10 sm:mt-8 mt-20"
+          >
+            <div
+              data-scroll
+              data-scroll-speed="2"
+              class="absolute top-[20%] md:right-[20%] md:left-auto left-[20%] right-auto h-full w-[80%] border-2 border-orange-500 rounded-3xl -z-10"
+            ></div>
+            <div class="md:w-1/2 sm:w-2/3 w-full relative md:order-2 order-1">
+              <img
+                data-scroll
+                data-scroll-speed="3"
+                src="assets/images/4.jpg"
+                alt="..."
+                class="w-full shadow-2xl shadow-black"
+              />
+              <div
+                data-scroll
+                data-scroll-speed="2.2"
+                class="absolute w-full h-full bg-white top-5 left-5 -z-10 shadow-2xl shadow-black"
+              ></div>
+            </div>
+            <h3
+              class="text-white lg:text-4xl md:text-3xl sm:text-2xl text-xl font-extralight leading-none tracking-tighter mix-blend-difference md:w-1/2 sm:2/3 w-full myfont italic md:-me-20 -me-0 md:text-end text-start relative z-10 md:order-1 order-2"
+            >
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Exercitationem tempora dicta voluptatem!
+            </h3>
+          </div>
+        </div>
+      </section>
+      <!-- contact section -->
+      <section>
+        <div
+          data-scroll
+          data-scroll-speed="8"
+          data-scroll-direction="horizontal"
+          class="text-transparent font-extrabold whitespace-nowrap flex items-center text-[25vw] w-full leading-none tracking-tighter italic"
+          style="-webkit-text-stroke: 2px white"
+        >
+          <h3 class="myfont italic mx-4">+91 8737812696</h3>
+          <h3 class="myfont italic mx-4">+91 8737812696</h3>
+          <h3 class="myfont italic mx-4">+91 8737812696</h3>
+          <h3 class="myfont italic mx-4">+91 8737812696</h3>
+          <h3 class="myfont italic mx-4">+91 8737812696</h3>
+          <h3 class="myfont italic mx-4">+91 8737812696</h3>
+        </div>
+        <div
+          data-scroll
+          data-scroll-speed="-8"
+          data-scroll-direction="horizontal"
+          class="text-transparent font-extrabold whitespace-nowrap flex items-center text-[25vw] w-full leading-none tracking-tighter italic -mt-10"
+          style="-webkit-text-stroke: 2px white"
+        >
+          <h3 class="myfont italic mx-4 -translate-x-1/4">
+            knp.harsh@gmail.com
+          </h3>
+          <h3 class="myfont italic mx-4 -translate-x-1/4">
+            knp.harsh@gmail.com
+          </h3>
+          <h3 class="myfont italic mx-4 -translate-x-1/4">
+            knp.harsh@gmail.com
+          </h3>
+          <h3 class="myfont italic mx-4 -translate-x-1/4">
+            knp.harsh@gmail.com
+          </h3>
+          <h3 class="myfont italic mx-4 -translate-x-1/4">
+            knp.harsh@gmail.com
+          </h3>
+        </div>
+        <div
+          class="text-end px-5 text-white hover:text-orange-500 transition-all italic sm:text-sm text-xs font-medium leading-none relative z-10"
+        >
+          <a href="#" class="myfont">+91 8737812696</a>
+        </div>
+        <div
+          class="text-end px-5 text-white hover:text-orange-500 transition-all italic sm:text-sm text-xs font-medium leading-none relative z-10"
+        >
+          <a href="#" class="myfont">knp.harsh@gmail.com</a>
+        </div>
+      </section>
+      <!--  -->
+      <div id="section" class="mt-32">
+        <section
+          data-scroll
+          data-scroll-sticky
+          data-scroll-target="#section"
+          class="sticky top-0"
+        >
+          <div
+            class="container flex justify-center items-center mx-auto text-zinc-200 uppercase leading-none"
+          >
+            <div class="mainFont text-[22vw] leading-none tracking-tighter">
+              Lorem ipsum dolor sit amet consectet adipisicing.
+            </div>
+          </div>
+        </section>
+        <section
+          class="h-screen px-5 flex justify-center items-center mt-10 rounded-[35px] bg-zinc-200 relative z-10 shadow-black"
+          style="box-shadow: -5px -5px 30px"
+        >
+          <div
+            class="text-black uppercase font-extralight lg:text-7xl md:text-6xl sm:text-5xl text-4xl text-center leading-none tracking-tighter"
+          >
+            <div class="w-screen overflow-hidden flex whitespace-nowrap">
+              <a
+                href="#"
+                class="lg:text-4xl md:text-3xl sm:text-2xl text-xl text-orange-500 font-extralight relative leading-none whitespace-nowrap animationTxt italic z-10"
+              >
+                Lorem ipsum dolor sit amet consectetur
+                <div class="px-5 inline">
+                  <i
+                    class="bi bi-asterisk inline-block animate-spin"
+                    style="animation-duration: 6s"
+                  ></i>
+                </div>
+              </a>
+              <a
+                href="#"
+                class="lg:text-4xl md:text-3xl sm:text-2xl text-xl text-orange-500 font-extralight relative leading-none whitespace-nowrap animationTxt italic z-10"
+              >
+                Lorem ipsum dolor sit amet consectetur
+                <div class="px-5 inline">
+                  <i
+                    class="bi bi-asterisk inline-block animate-spin"
+                    style="animation-duration: 6s"
+                  ></i>
+                </div>
+              </a>
+              <a
+                href="#"
+                class="lg:text-4xl md:text-3xl sm:text-2xl text-xl text-orange-500 font-extralight relative leading-none whitespace-nowrap animationTxt italic z-10"
+              >
+                Lorem ipsum dolor sit amet consectetur
+                <div class="px-5 inline">
+                  <i
+                    class="bi bi-asterisk inline-block animate-spin"
+                    style="animation-duration: 6s"
+                  ></i>
+                </div>
+              </a>
+            </div>
+            <div class="flex justify-center">
+              <div class="lg:w-4/5 md:w-11/12 w-full italic">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat
+                eius minus et adipisci assumenda aut error amet nihil a sunt
+                tempore.
+              </div>
+            </div>
+            <div class="w-screen overflow-hidden flex whitespace-nowrap">
+              <a
+                href="#"
+                class="lg:text-4xl md:text-3xl sm:text-2xl text-xl text-orange-500 font-extralight relative leading-none whitespace-nowrap animationTxt italic z-10"
+              >
+                Lorem ipsum dolor sit amet consectetur
+                <div class="px-5 inline">
+                  <i
+                    class="bi bi-asterisk inline-block animate-spin"
+                    style="animation-duration: 6s"
+                  ></i>
+                </div>
+              </a>
+              <a
+                href="#"
+                class="lg:text-4xl md:text-3xl sm:text-2xl text-xl text-orange-500 font-extralight relative leading-none whitespace-nowrap animationTxt italic z-10"
+              >
+                Lorem ipsum dolor sit amet consectetur
+                <div class="px-5 inline">
+                  <i
+                    class="bi bi-asterisk inline-block animate-spin"
+                    style="animation-duration: 6s"
+                  ></i>
+                </div>
+              </a>
+              <a
+                href="#"
+                class="lg:text-4xl md:text-3xl sm:text-2xl text-xl text-orange-500 font-extralight relative leading-none whitespace-nowrap animationTxt italic z-10"
+              >
+                Lorem ipsum dolor sit amet consectetur
+                <div class="px-5 inline">
+                  <i
+                    class="bi bi-asterisk inline-block animate-spin"
+                    style="animation-duration: 6s"
+                  ></i>
+                </div>
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!--  -->
+      <div
+        class="mainFont text-[14vw] tracking-tighter text-zinc-200 leading-[11.5vw] mix-blend-difference relative z-20 text-center mt-20"
+      >
+        <a href="#" class="hover:text-orange-500 transition-all mainFont">
+          Lorem ipsum dolor
+        </a>
+        <a href="#" class="hover:text-orange-500 transition-all mainFont">
+          sit amet consectetur
+        </a>
+        <a href="#" class="hover:text-orange-500 transition-all mainFont">
+          adipisicing elit Quo
+        </a>
+        <a href="#" class="hover:text-orange-500 transition-all mainFont">
+          Quo libero porro hic accusamus
+        </a>
+        <a href="#" class="hover:text-orange-500 transition-all mainFont">
+          ores aut cum dolorem expedita
+        </a>
+        <a href="#" class="hover:text-orange-500 transition-all mainFont">
+          at laudantium voluptate
+        </a>
+        <a href="#" class="hover:text-orange-500 transition-all mainFont">
+          samus perferendis sint dolores
+        </a>
+        <a href="#" class="hover:text-orange-500 transition-all mainFont">
+          antium voluptate impedit faci
+        </a>
+      </div>
+      <!--  -->
+      <div class="py-52">
+        <div
+          class="w-screen flex whitespace-nowrap text-[55vw] tracking-tighter text-zinc-100 leading-none z-10"
+        >
+          <h3 class="whitespace-nowrap animationTxt mainFont scale-x-150 px-5">
+            Let's connect mail me - knp.harsh@gmail.com
+            <span class="text-orange-500 mainFont">-</span>
+          </h3>
+          <h3 class="whitespace-nowrap animationTxt mainFont scale-x-150 px-5">
+            Let's connect mail me - knp.harsh@gmail.com
+            <span class="text-orange-500 mainFont">-</span>
+          </h3>
+          <h3 class="whitespace-nowrap animationTxt mainFont scale-x-150 px-5">
+            Let's connect mail me - knp.harsh@gmail.com
+            <span class="text-orange-500 mainFont">-</span>
+          </h3>
+          <h3 class="whitespace-nowrap animationTxt mainFont scale-x-150 px-5">
+            Let's connect mail me - knp.harsh@gmail.com
+            <span class="text-orange-500 mainFont">-</span>
+          </h3>
+          <h3 class="whitespace-nowrap animationTxt mainFont scale-x-150 px-5">
+            Let's connect mail me - knp.harsh@gmail.com
+            <span class="text-orange-500 mainFont">-</span>
+          </h3>
+          <h3 class="whitespace-nowrap animationTxt mainFont scale-x-150 px-5">
+            Let's connect mail me - knp.harsh@gmail.com
+            <span class="text-orange-500 mainFont">-</span>
+          </h3>
+        </div>
+        <div class="flex justify-end px-5 relative z-20">
+          <a
+            href="#"
+            class="text-orange-500 hover:text-orange-700 myfont text-[2vw] font-light leading-none tracking-tighter bg-transparent"
+            >knp.harsh@gmail.com</a
+          >
+        </div>
+      </div>
+      <!-- Footer -->
+      <footer class="w-full px-5">
+        <div class="py-32">
+          <div
+            class="text-white text-[10vw] font-extralight leading-none tracking-tighter"
+          >
+            <h3 class="myfont">NICE</h3>
+            <h3 class="myfont">TO MEET</h3>
+            <h3 class="myfont">YOU</h3>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="assets/js/loco.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
