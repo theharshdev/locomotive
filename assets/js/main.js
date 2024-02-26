@@ -13,7 +13,7 @@ function locoScroll() {
       smooth: true,
       smoothMobile: true,
       lerp: 1,
-      multiplier: 1,
+      // multiplier: 1,
     });
   }
 }
