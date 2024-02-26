@@ -4,8 +4,8 @@ function locoScroll() {
       el: document.querySelector("[data-scroll-container]"),
       smooth: true,
       smoothMobile: true,
-      lerp: 0.05,
-      multiplier: 0.5,
+      lerp: 0.04,
+      multiplier: 0.6,
     });
   } else {
     const scroll = new LocomotiveScroll({
