@@ -132,17 +132,8 @@ input[type="number"] {
   -webkit-text-stroke: 2px white;
 }
 
-.textStroke2 {
-  color: transparent;
-  -webkit-text-stroke: 2px #f97316;
-}
-
 @media screen and (max-width: 660px) {
   .textStroke1 {
     -webkit-text-stroke: 1px rgba(255, 255, 255, 0.596);
-  }
-
-  .textStroke2 {
-    -webkit-text-stroke: 1px #f97316;
   }
 }

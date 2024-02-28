@@ -1,27 +1,3 @@
-function locoScroll() {
-  if (window.innerWidth > 1000) {
-    const scroll = new LocomotiveScroll({
-      el: document.querySelector("[data-scroll-container]"),
-      smooth: true,
-      smoothMobile: true,
-      lerp: 0.04,
-      multiplier: 0.6,
-    });
-  } else {
-    const scroll = new LocomotiveScroll({
-      el: document.querySelector("[data-scroll-container]"),
-      smooth: true,
-      smoothMobile: true,
-      // lerp: 1,
-      multiplier: 1,
-    });
-  }
-}
-
-window.addEventListener("load", locoScroll);
-window.addEventListener("scroll", locoScroll);
-window.addEventListener("resize", locoScroll);
-
 const paragraphs = document.querySelectorAll(".paragraph");
 
 paragraphs.forEach((paragraph) => {
@@ -114,4 +90,10 @@ loaderBoxs.forEach((loaderBox, index) => {
     loaderBox.classList.remove("h-screen");
     loaderBox.classList.add("h-0");
   }, index * 160);
+});
+
+const scroll = new LocomotiveScroll({
+  el: document.querySelector("[data-scroll-container]"),
+  smooth: true,
+  smoothMobile: true,
 });
