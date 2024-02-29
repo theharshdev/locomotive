@@ -781,6 +781,10 @@ video {
   display: flex;
 }
 
+.table {
+  display: table;
+}
+
 .hidden {
   display: none;
 }
@@ -807,6 +811,38 @@ video {
 
 .h-screen {
   height: 100vh;
+}
+
+.h-\[\] {
+  height: ;
+}
+
+.h-\[20\] {
+  height: 20;
+}
+
+.h-\[20vh\] {
+  height: 20vh;
+}
+
+.h-\[2\] {
+  height: 2;
+}
+
+.h-\[30\] {
+  height: 30;
+}
+
+.h-\[40\] {
+  height: 40;
+}
+
+.h-\[40vh\] {
+  height: 40vh;
+}
+
+.h-\[30vh\] {
+  height: 30vh;
 }
 
 .w-0 {
